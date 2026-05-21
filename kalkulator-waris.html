@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="id" class="h-full">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="Icon/logo-umm.png" type="image/png">
-  <title>Kalkulator Waris | RAMADANI UMM</title>
+  <title>Kalkulator | Ramadani</title>
 
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <script>
@@ -17,9 +20,9 @@
         extend: {
           colors: {
             pai: {
-              50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',
-              400:'#60a5fa',500:'#3b82f6',600:'#1e40af',700:'#1e3a8a',
-              800:'#172554',900:'#0f172a'
+              50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+              400: '#60a5fa', 500: '#3b82f6', 600: '#1e40af', 700: '#1e3a8a',
+              800: '#172554', 900: '#0f172a'
             }
           }
         }
@@ -28,40 +31,79 @@
   </script>
 
   <style>
-    body { box-sizing: border-box; font-family: 'DM Sans', sans-serif; }
-    .font-heading { font-family: 'Playfair Display', serif; }
+    body {
+      box-sizing: border-box;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .font-heading {
+      font-family: 'Playfair Display', serif;
+    }
 
     .toast {
-      position: fixed; bottom: 20px; right: 20px;
-      padding: 16px 24px; border-radius: 12px;
-      color: white; font-weight: 500; z-index: 9999;
-      transform: translateY(100px); opacity: 0;
-      transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 16px 24px;
+      border-radius: 12px;
+      color: white;
+      font-weight: 500;
+      z-index: 9999;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .toast.show    { transform: translateY(0); opacity: 1; }
-    .toast.success { background: #16a34a; }
-    .toast.error   { background: #dc2626; }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast.success {
+      background: #16a34a;
+    }
+
+    .toast.error {
+      background: #dc2626;
+    }
 
     .btn-back {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 22px; border-radius: 50px;
-      background: rgba(255,255,255,0.12);
-      border: 1.5px solid rgba(255,255,255,0.28);
-      color: rgba(255,255,255,0.92); font-size: 0.85rem; font-weight: 600;
-      text-decoration: none; transition: all 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1.5px solid rgba(255, 255, 255, 0.28);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s;
       backdrop-filter: blur(8px);
     }
+
     .btn-back:hover {
-      background: rgba(255,255,255,0.22);
+      background: rgba(255, 255, 255, 0.22);
       color: #fff;
       transform: translateX(-2px);
     }
 
     @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50%      { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
-    .anim-float { animation: float 3s ease-in-out infinite; }
+
+    .anim-float {
+      animation: float 3s ease-in-out infinite;
+    }
   </style>
 </head>
 
@@ -77,7 +119,8 @@
 
         <!-- Brand -->
         <a href="index.html" class="flex items-center gap-3 no-underline">
-          <div class="w-10 h-10 rounded-full overflow-hidden bg-white/20 backdrop-blur flex items-center justify-center border-2 border-white/30">
+          <div
+            class="w-10 h-10 rounded-full overflow-hidden bg-white/20 backdrop-blur flex items-center justify-center border-2 border-white/30">
             <img src="Icon/logo-umm.png" alt="logo" class="w-8 h-8 object-contain">
           </div>
           <div>
@@ -88,9 +131,9 @@
 
         <!-- Tombol Kembali -->
         <a href="index.html" class="btn-back">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6" />
           </svg>
           Kembali ke Beranda
         </a>
@@ -101,17 +144,22 @@
     <div class="relative overflow-hidden">
       <div class="absolute inset-0 pointer-events-none overflow-hidden">
         <div class="absolute top-10 right-10 w-72 h-72 rounded-full border border-white/5 anim-float"></div>
-        <div class="absolute -bottom-20 left-10 w-96 h-96 rounded-full border border-white/5 anim-float" style="animation-delay:1.5s;"></div>
+        <div class="absolute -bottom-20 left-10 w-96 h-96 rounded-full border border-white/5 anim-float"
+          style="animation-delay:1.5s;"></div>
         <svg class="absolute top-8 left-16 w-24 h-24 text-white/5" viewBox="0 0 100 100">
-          <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="currentColor"
+            stroke-width="1.5" />
         </svg>
       </div>
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-18 text-center">
-        <span class="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/90 text-xs font-semibold uppercase tracking-wider mb-4">⚖️ Alat Bantu Fiqih</span>
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/90 text-xs font-semibold uppercase tracking-wider mb-4">⚖️
+          Alat Bantu Fiqih</span>
         <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Kalkulator Waris Islam</h1>
         <p class="text-white/65 text-base max-w-2xl mx-auto leading-relaxed">
           Isi data ahli waris di panel kiri, lalu tekan
-          <strong class="text-white/90">Hitung Pembagian Warisan</strong> untuk melihat hasilnya berdasarkan Ilmu Faraidh &amp; KHI.
+          <strong class="text-white/90">Hitung Pembagian Warisan</strong> untuk melihat hasilnya berdasarkan Ilmu
+          Faraidh &amp; KHI.
         </p>
       </div>
     </div>
@@ -129,9 +177,10 @@
             <div class="bg-gradient-to-r from-pai-700 to-pai-600 px-7 py-6">
               <div class="flex items-center gap-3 mb-1">
                 <div class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                    fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 14 4 9l5-5"/><path d="m15 10 5 5-5 5"/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 14 4 9l5-5" />
+                    <path d="m15 10 5 5-5 5" />
                   </svg>
                 </div>
                 <h3 class="font-heading text-xl font-bold text-white">Data Pewaris</h3>
@@ -143,7 +192,8 @@
 
               <!-- Harta -->
               <div>
-                <label class="block text-xs font-bold text-pai-800 mb-1.5 uppercase tracking-wide">💰 Total Harta Warisan (Rp)</label>
+                <label class="block text-xs font-bold text-pai-800 mb-1.5 uppercase tracking-wide">💰 Total Harta
+                  Warisan (Rp)</label>
                 <div class="relative">
                   <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm font-semibold">Rp</span>
                   <input type="number" id="hartaWarisan" min="0" placeholder="Contoh: 500000000"
@@ -158,7 +208,8 @@
               <!-- Pasangan -->
               <div>
                 <label class="block text-xs font-semibold text-gray-700 mb-1.5">Pasangan Pewaris</label>
-                <select id="pasangan" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-pai-500 focus:ring-2 focus:ring-pai-100 transition-all text-gray-800 bg-white">
+                <select id="pasangan"
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-pai-500 focus:ring-2 focus:ring-pai-100 transition-all text-gray-800 bg-white">
                   <option value="tidak_ada">— Tidak Ada —</option>
                   <option value="suami">Suami / Duda (Pewaris wanita)</option>
                   <option value="istri">Istri / Janda (Pewaris pria)</option>
@@ -183,14 +234,16 @@
               <div class="grid grid-cols-2 gap-3">
                 <div>
                   <label class="block text-xs font-semibold text-gray-700 mb-1.5">Ayah Kandung</label>
-                  <select id="statusAyah" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-pai-500 focus:ring-2 focus:ring-pai-100 transition-all text-gray-800 bg-white">
+                  <select id="statusAyah"
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-pai-500 focus:ring-2 focus:ring-pai-100 transition-all text-gray-800 bg-white">
                     <option value="tidak_ada">Tidak Ada</option>
                     <option value="ada">Masih Hidup</option>
                   </select>
                 </div>
                 <div>
                   <label class="block text-xs font-semibold text-gray-700 mb-1.5">Ibu Kandung</label>
-                  <select id="statusIbu" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-pai-500 focus:ring-2 focus:ring-pai-100 transition-all text-gray-800 bg-white">
+                  <select id="statusIbu"
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-pai-500 focus:ring-2 focus:ring-pai-100 transition-all text-gray-800 bg-white">
                     <option value="tidak_ada">Tidak Ada</option>
                     <option value="ada">Masih Hidup</option>
                   </select>
@@ -241,17 +294,18 @@
 
               <!-- Info -->
               <div class="bg-pai-50 border border-pai-100 rounded-xl p-3 text-xs text-pai-700 leading-relaxed">
-                <strong>ℹ️ Catatan:</strong> Saudara hanya mendapat warisan jika <em>tidak ada</em> anak/cucu maupun ayah kandung. Saudara kandung menghalangi saudara seayah dan seibu.
+                <strong>ℹ️ Catatan:</strong> Saudara hanya mendapat warisan jika <em>tidak ada</em> anak/cucu maupun
+                ayah kandung. Saudara kandung menghalangi saudara seayah dan seibu.
               </div>
 
               <!-- Hitung -->
               <button onclick="hitungWarisan()"
                 class="w-full py-3.5 bg-gradient-to-r from-pai-700 to-pai-600 hover:from-pai-800 hover:to-pai-700 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-pai-900/30 hover:shadow-pai-900/50 hover:-translate-y-0.5 flex items-center justify-center gap-2 text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                  fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <rect width="16" height="16" x="4" y="4" rx="2"/>
-                  <line x1="4" x2="20" y1="12" y2="12"/>
-                  <line x1="12" x2="12" y1="4" y2="20"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="16" height="16" x="4" y="4" rx="2" />
+                  <line x1="4" x2="20" y1="12" y2="12" />
+                  <line x1="12" x2="12" y1="4" y2="20" />
                 </svg>
                 Hitung Pembagian Warisan
               </button>
@@ -271,16 +325,26 @@
 
           <!-- Placeholder -->
           <div id="placeholder-waris" class="flex flex-col items-center justify-center py-20 text-center">
-            <div class="w-24 h-24 rounded-full bg-white/10 flex items-center justify-center mb-6 text-5xl anim-float">⚖️</div>
+            <div class="w-24 h-24 rounded-full bg-white/10 flex items-center justify-center mb-6 text-5xl anim-float">⚖️
+            </div>
             <h3 class="font-heading text-2xl font-bold text-white mb-3">Siap Menghitung</h3>
             <p class="text-white/55 text-sm max-w-xs leading-relaxed">
               Isi data di sebelah kiri lalu tekan tombol
               <span class="text-white/80 font-semibold">Hitung Pembagian Warisan</span>
             </p>
             <div class="mt-8 grid grid-cols-3 gap-4 w-full max-w-sm">
-              <div class="bg-white/5 rounded-xl p-4 border border-white/10"><p class="text-2xl mb-1">📖</p><p class="text-white/60 text-xs">QS. An-Nisa' 11</p></div>
-              <div class="bg-white/5 rounded-xl p-4 border border-white/10"><p class="text-2xl mb-1">⚖️</p><p class="text-white/60 text-xs">KHI Pasal 174–193</p></div>
-              <div class="bg-white/5 rounded-xl p-4 border border-white/10"><p class="text-2xl mb-1">🕌</p><p class="text-white/60 text-xs">Ilmu Faraidh</p></div>
+              <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+                <p class="text-2xl mb-1">📖</p>
+                <p class="text-white/60 text-xs">QS. An-Nisa' 11</p>
+              </div>
+              <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+                <p class="text-2xl mb-1">⚖️</p>
+                <p class="text-white/60 text-xs">KHI Pasal 174–193</p>
+              </div>
+              <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+                <p class="text-2xl mb-1">🕌</p>
+                <p class="text-white/60 text-xs">Ilmu Faraidh</p>
+              </div>
             </div>
           </div>
 
@@ -293,7 +357,8 @@
                   <span class="w-7 h-7 rounded-lg bg-pai-100 flex items-center justify-center text-sm">📊</span>
                   Hasil Perhitungan
                 </h4>
-                <span id="badge-total-ahli" class="text-xs font-semibold bg-pai-100 text-pai-700 px-3 py-1 rounded-full"></span>
+                <span id="badge-total-ahli"
+                  class="text-xs font-semibold bg-pai-100 text-pai-700 px-3 py-1 rounded-full"></span>
               </div>
 
               <div class="bg-gradient-to-r from-pai-50 to-blue-50 rounded-2xl p-4 mb-5 border border-pai-100">
@@ -306,7 +371,9 @@
 
               <div class="mt-5 p-4 bg-amber-50 border border-amber-200 rounded-xl">
                 <p class="text-amber-800 text-xs leading-relaxed font-medium">
-                  ⚠️ <strong>Catatan Hukum:</strong> Perhitungan ini merupakan estimasi berdasarkan ketentuan dasar Ilmu Faraidh &amp; KHI. Harta warisan harus bersih dari hutang, wasiat (maks. 1/3), dan biaya pemakaman. Untuk kepastian hukum, konsultasikan dengan Pengadilan Agama atau ulama ahli waris.
+                  ⚠️ <strong>Catatan Hukum:</strong> Perhitungan ini merupakan estimasi berdasarkan ketentuan dasar Ilmu
+                  Faraidh &amp; KHI. Harta warisan harus bersih dari hutang, wasiat (maks. 1/3), dan biaya pemakaman.
+                  Untuk kepastian hukum, konsultasikan dengan Pengadilan Agama atau ulama ahli waris.
                 </p>
               </div>
             </div>
@@ -339,22 +406,102 @@
                 </tr>
               </thead>
               <tbody class="divide-y divide-white/10">
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Suami / Duda</td><td class="py-2.5 pr-4 text-white/60 text-xs">Tidak ada anak/cucu</td><td class="py-2.5 text-emerald-400 font-bold">½</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 179</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Suami / Duda</td><td class="py-2.5 pr-4 text-white/60 text-xs">Ada anak/cucu</td><td class="py-2.5 text-emerald-400 font-bold">¼</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 179</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Istri / Janda</td><td class="py-2.5 pr-4 text-white/60 text-xs">Tidak ada anak/cucu</td><td class="py-2.5 text-emerald-400 font-bold">¼</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 180</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Istri / Janda</td><td class="py-2.5 pr-4 text-white/60 text-xs">Ada anak/cucu</td><td class="py-2.5 text-emerald-400 font-bold">⅛</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 180</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Anak Perempuan</td><td class="py-2.5 pr-4 text-white/60 text-xs">Sendirian, tanpa anak laki</td><td class="py-2.5 text-emerald-400 font-bold">½</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 11, KHI 176</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Anak Perempuan</td><td class="py-2.5 pr-4 text-white/60 text-xs">≥2, tanpa anak laki</td><td class="py-2.5 text-emerald-400 font-bold">⅔</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 11, KHI 176</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Anak Laki-laki</td><td class="py-2.5 pr-4 text-white/60 text-xs">Sendirian / bersama anak lain</td><td class="py-2.5 text-amber-400 font-bold">Ashabah (2:1)</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 11, KHI</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Ayah Kandung</td><td class="py-2.5 pr-4 text-white/60 text-xs">Tidak ada anak/cucu</td><td class="py-2.5 text-emerald-400 font-bold">⅓</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 11, KHI 177</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Ayah Kandung</td><td class="py-2.5 pr-4 text-white/60 text-xs">Ada anak/cucu</td><td class="py-2.5 text-emerald-400 font-bold">⅙</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 11, KHI 177</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Ibu Kandung</td><td class="py-2.5 pr-4 text-white/60 text-xs">Tidak ada anak/cucu, tidak ada ≥2 saudara</td><td class="py-2.5 text-emerald-400 font-bold">⅓</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 11, KHI 178</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Ibu Kandung</td><td class="py-2.5 pr-4 text-white/60 text-xs">Ada anak/cucu atau ≥2 saudara</td><td class="py-2.5 text-emerald-400 font-bold">⅙</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 11, KHI 178</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Saudara Seibu (1)</td><td class="py-2.5 pr-4 text-white/60 text-xs">Sendirian, tanpa anak &amp; ayah</td><td class="py-2.5 text-emerald-400 font-bold">⅙</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 181</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Saudara Seibu (≥2)</td><td class="py-2.5 pr-4 text-white/60 text-xs">Tanpa anak &amp; ayah</td><td class="py-2.5 text-emerald-400 font-bold">⅓ bersama</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 181</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Saudara Perempuan Kandung (1)</td><td class="py-2.5 pr-4 text-white/60 text-xs">Sendirian, tanpa anak &amp; ayah</td><td class="py-2.5 text-emerald-400 font-bold">½</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 182</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Saudara Perempuan Kandung (≥2)</td><td class="py-2.5 pr-4 text-white/60 text-xs">Tanpa anak &amp; ayah</td><td class="py-2.5 text-emerald-400 font-bold">⅔ bersama</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 182</td></tr>
-                <tr><td class="py-2.5 pr-4 text-white/90 font-medium">Saudara Laki-laki Kandung/Seayah</td><td class="py-2.5 pr-4 text-white/60 text-xs">Tanpa anak &amp; ayah; bersama saudara perempuan</td><td class="py-2.5 text-amber-400 font-bold">Ashabah (2:1)</td><td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 182</td></tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Suami / Duda</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Tidak ada anak/cucu</td>
+                  <td class="py-2.5 text-emerald-400 font-bold">½</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 179</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Suami / Duda</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Ada anak/cucu</td>
+                  <td class="py-2.5 text-emerald-400 font-bold">¼</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 179</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Istri / Janda</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Tidak ada anak/cucu</td>
+                  <td class="py-2.5 text-emerald-400 font-bold">¼</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 180</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Istri / Janda</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Ada anak/cucu</td>
+                  <td class="py-2.5 text-emerald-400 font-bold">⅛</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 180</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Anak Perempuan</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Sendirian, tanpa anak laki</td>
+                  <td class="py-2.5 text-emerald-400 font-bold">½</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 11, KHI 176</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Anak Perempuan</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">≥2, tanpa anak laki</td>
+                  <td class="py-2.5 text-emerald-400 font-bold">⅔</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 11, KHI 176</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Anak Laki-laki</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Sendirian / bersama anak lain</td>
+                  <td class="py-2.5 text-amber-400 font-bold">Ashabah (2:1)</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 11, KHI</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Ayah Kandung</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Tidak ada anak/cucu</td>
+                  <td class="py-2.5 text-emerald-400 font-bold">⅓</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 11, KHI 177</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Ayah Kandung</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Ada anak/cucu</td>
+                  <td class="py-2.5 text-emerald-400 font-bold">⅙</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 11, KHI 177</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Ibu Kandung</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Tidak ada anak/cucu, tidak ada ≥2 saudara</td>
+                  <td class="py-2.5 text-emerald-400 font-bold">⅓</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 11, KHI 178</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Ibu Kandung</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Ada anak/cucu atau ≥2 saudara</td>
+                  <td class="py-2.5 text-emerald-400 font-bold">⅙</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 11, KHI 178</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Saudara Seibu (1)</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Sendirian, tanpa anak &amp; ayah</td>
+                  <td class="py-2.5 text-emerald-400 font-bold">⅙</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 181</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Saudara Seibu (≥2)</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Tanpa anak &amp; ayah</td>
+                  <td class="py-2.5 text-emerald-400 font-bold">⅓ bersama</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 181</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Saudara Perempuan Kandung (1)</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Sendirian, tanpa anak &amp; ayah</td>
+                  <td class="py-2.5 text-emerald-400 font-bold">½</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 182</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Saudara Perempuan Kandung (≥2)</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Tanpa anak &amp; ayah</td>
+                  <td class="py-2.5 text-emerald-400 font-bold">⅔ bersama</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 182</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4 text-white/90 font-medium">Saudara Laki-laki Kandung/Seayah</td>
+                  <td class="py-2.5 pr-4 text-white/60 text-xs">Tanpa anak &amp; ayah; bersama saudara perempuan</td>
+                  <td class="py-2.5 text-amber-400 font-bold">Ashabah (2:1)</td>
+                  <td class="py-2.5 pl-4 text-white/50 text-xs">An-Nisa' 12, KHI 182</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -364,9 +511,9 @@
       <!-- Tombol Kembali bawah -->
       <div class="flex justify-center mt-12">
         <a href="index.html" class="btn-back px-8 py-3 text-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6" />
           </svg>
           Kembali ke Beranda
         </a>
@@ -399,25 +546,25 @@
         showToast('Masukkan jumlah harta warisan terlebih dahulu!', 'error');
         return;
       }
-      const pasangan           = document.getElementById('pasangan').value;
-      const anakLaki           = parseInt(document.getElementById('jumlahAnakLaki').value) || 0;
-      const anakPerempuan      = parseInt(document.getElementById('jumlahAnakPerempuan').value) || 0;
-      const statusAyah         = document.getElementById('statusAyah').value;
-      const statusIbu          = document.getElementById('statusIbu').value;
+      const pasangan = document.getElementById('pasangan').value;
+      const anakLaki = parseInt(document.getElementById('jumlahAnakLaki').value) || 0;
+      const anakPerempuan = parseInt(document.getElementById('jumlahAnakPerempuan').value) || 0;
+      const statusAyah = document.getElementById('statusAyah').value;
+      const statusIbu = document.getElementById('statusIbu').value;
       const saudaraLakiKandung = parseInt(document.getElementById('jumlahSaudaraLakiKandung').value) || 0;
       const saudaraPercKandung = parseInt(document.getElementById('jumlahSaudaraPerempuanKandung').value) || 0;
-      const saudaraLakiSeibu   = parseInt(document.getElementById('jumlahSaudaraLakiSeibu').value) || 0;
-      const saudaraPercSeibu   = parseInt(document.getElementById('jumlahSaudaraPerempuanSeibu').value) || 0;
-      const saudaraLakiSeayah  = parseInt(document.getElementById('jumlahSaudaraLakiSeayah').value) || 0;
-      const saudaraPercSeayah  = parseInt(document.getElementById('jumlahSaudaraPerempuanSeayah').value) || 0;
+      const saudaraLakiSeibu = parseInt(document.getElementById('jumlahSaudaraLakiSeibu').value) || 0;
+      const saudaraPercSeibu = parseInt(document.getElementById('jumlahSaudaraPerempuanSeibu').value) || 0;
+      const saudaraLakiSeayah = parseInt(document.getElementById('jumlahSaudaraLakiSeayah').value) || 0;
+      const saudaraPercSeayah = parseInt(document.getElementById('jumlahSaudaraPerempuanSeayah').value) || 0;
 
-      const adaAnak  = (anakLaki + anakPerempuan) > 0;
-      const adaAyah  = statusAyah === 'ada';
-      const adaIbu   = statusIbu === 'ada';
+      const adaAnak = (anakLaki + anakPerempuan) > 0;
+      const adaAyah = statusAyah === 'ada';
+      const adaIbu = statusIbu === 'ada';
       const totalSaudaraKandung = saudaraLakiKandung + saudaraPercKandung;
-      const totalSaudaraSeibu   = saudaraLakiSeibu + saudaraPercSeibu;
-      const totalSaudaraSeayah  = saudaraLakiSeayah + saudaraPercSeayah;
-      const totalSaudaraSemua   = totalSaudaraKandung + totalSaudaraSeibu + totalSaudaraSeayah;
+      const totalSaudaraSeibu = saudaraLakiSeibu + saudaraPercSeibu;
+      const totalSaudaraSeayah = saudaraLakiSeayah + saudaraPercSeayah;
+      const totalSaudaraSemua = totalSaudaraKandung + totalSaudaraSeibu + totalSaudaraSeayah;
 
       let sisa = hartaInput;
       const hasil = [];
@@ -429,15 +576,15 @@
       }
 
       if (pasangan === 'suami') {
-        const fraksi = adaAnak ? 1/4 : 1/2;
-        const label  = adaAnak ? '¼' : '½';
-        const bayar  = hartaInput * fraksi;
+        const fraksi = adaAnak ? 1 / 4 : 1 / 2;
+        const label = adaAnak ? '¼' : '½';
+        const bayar = hartaInput * fraksi;
         addHasil('Suami / Duda', label, bayar, ["An-Nisa' 12", 'KHI Pasal 179'], 'blue');
         sisa -= bayar;
       } else if (pasangan === 'istri') {
-        const fraksi = adaAnak ? 1/8 : 1/4;
-        const label  = adaAnak ? '⅛' : '¼';
-        const bayar  = hartaInput * fraksi;
+        const fraksi = adaAnak ? 1 / 8 : 1 / 4;
+        const label = adaAnak ? '⅛' : '¼';
+        const bayar = hartaInput * fraksi;
         addHasil('Istri / Janda', label, bayar, ["An-Nisa' 12", 'KHI Pasal 180'], 'blue');
         sisa -= bayar;
       }
@@ -445,7 +592,7 @@
       let ayahIsAshabah = false;
       if (adaAyah) {
         if (adaAnak) {
-          const bayar = hartaInput * (1/6);
+          const bayar = hartaInput * (1 / 6);
           addHasil('Ayah Kandung', '⅙', bayar, ["An-Nisa' 11", 'KHI Pasal 177'], 'green');
           sisa -= bayar;
         } else { ayahIsAshabah = true; }
@@ -454,16 +601,16 @@
       if (adaIbu) {
         const adaDuaAtauLebihSaudara = totalSaudaraSemua >= 2;
         if (adaAnak || adaDuaAtauLebihSaudara) {
-          const bayar = hartaInput * (1/6);
+          const bayar = hartaInput * (1 / 6);
           addHasil('Ibu Kandung', '⅙', bayar, ["An-Nisa' 11", 'KHI Pasal 178'], 'green');
           sisa -= bayar;
         } else {
           if (adaAyah) {
-            const bayar = sisa * (1/3);
+            const bayar = sisa * (1 / 3);
             addHasil('Ibu Kandung', '⅓ dari sisa', bayar, ["An-Nisa' 11", 'KHI Pasal 178'], 'green');
             sisa -= bayar;
           } else {
-            const bayar = hartaInput * (1/3);
+            const bayar = hartaInput * (1 / 3);
             addHasil('Ibu Kandung', '⅓', bayar, ["An-Nisa' 11", 'KHI Pasal 178'], 'green');
             sisa -= bayar;
           }
@@ -482,7 +629,7 @@
           }
           sisa = 0;
         } else {
-          const fraksiTotal = anakPerempuan === 1 ? 1/2 : 2/3;
+          const fraksiTotal = anakPerempuan === 1 ? 1 / 2 : 2 / 3;
           const label = anakPerempuan === 1 ? '½' : '⅔';
           const bayar = hartaInput * fraksiTotal;
           addHasil(`Anak Perempuan (${anakPerempuan} orang)`, label, bayar,
@@ -498,9 +645,9 @@
 
       if (!adaAnak && !adaAyah && sisa > 0) {
         if (totalSaudaraSeibu > 0) {
-          const fraksi = totalSaudaraSeibu === 1 ? 1/6 : 1/3;
-          const label  = totalSaudaraSeibu === 1 ? '⅙' : '⅓';
-          const bayar  = hartaInput * fraksi;
+          const fraksi = totalSaudaraSeibu === 1 ? 1 / 6 : 1 / 3;
+          const label = totalSaudaraSeibu === 1 ? '⅙' : '⅓';
+          const bayar = hartaInput * fraksi;
           const nama = [];
           if (saudaraLakiSeibu > 0) nama.push(`${saudaraLakiSeibu} laki-laki`);
           if (saudaraPercSeibu > 0) nama.push(`${saudaraPercSeibu} perempuan`);
@@ -518,9 +665,9 @@
                 perUnit * saudaraPercKandung, ["An-Nisa' 12", 'KHI Pasal 182'], 'pink');
             sisa = 0;
           } else {
-            const fraksi = saudaraPercKandung === 1 ? 1/2 : 2/3;
-            const label  = saudaraPercKandung === 1 ? '½' : '⅔';
-            const bayar  = sisa * fraksi;
+            const fraksi = saudaraPercKandung === 1 ? 1 / 2 : 2 / 3;
+            const label = saudaraPercKandung === 1 ? '½' : '⅔';
+            const bayar = sisa * fraksi;
             addHasil(`Saudara Perempuan Kandung (${saudaraPercKandung} orang)`, label, bayar,
               ["An-Nisa' 12", 'KHI Pasal 182'], 'pink');
             sisa -= bayar;
@@ -536,9 +683,9 @@
                 perUnit * saudaraPercSeayah, ["An-Nisa' 12", 'KHI Pasal 182'], 'pink');
             sisa = 0;
           } else {
-            const fraksi = saudaraPercSeayah === 1 ? 1/2 : 2/3;
-            const label  = saudaraPercSeayah === 1 ? '½' : '⅔';
-            const bayar  = sisa * fraksi;
+            const fraksi = saudaraPercSeayah === 1 ? 1 / 2 : 2 / 3;
+            const label = saudaraPercSeayah === 1 ? '½' : '⅔';
+            const bayar = sisa * fraksi;
             addHasil(`Saudara Perempuan Seayah (${saudaraPercSeayah} orang)`, label, bayar,
               ["An-Nisa' 12", 'KHI Pasal 182'], 'pink');
             sisa -= bayar;
@@ -548,13 +695,13 @@
 
       // Render hasil
       const colorMap = {
-        blue:   {bg:'bg-blue-50',  border:'border-blue-200',  text:'text-blue-700',  bar:'bg-blue-400',  badge:'bg-blue-100 text-blue-700'},
-        green:  {bg:'bg-green-50', border:'border-green-200', text:'text-green-700', bar:'bg-green-400', badge:'bg-green-100 text-green-700'},
-        pink:   {bg:'bg-pink-50',  border:'border-pink-200',  text:'text-pink-700',  bar:'bg-pink-400',  badge:'bg-pink-100 text-pink-700'},
-        amber:  {bg:'bg-amber-50', border:'border-amber-200', text:'text-amber-700', bar:'bg-amber-400', badge:'bg-amber-100 text-amber-700'},
-        purple: {bg:'bg-purple-50',border:'border-purple-200',text:'text-purple-700',bar:'bg-purple-400',badge:'bg-purple-100 text-purple-700'},
+        blue: { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-700', bar: 'bg-blue-400', badge: 'bg-blue-100 text-blue-700' },
+        green: { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-700', bar: 'bg-green-400', badge: 'bg-green-100 text-green-700' },
+        pink: { bg: 'bg-pink-50', border: 'border-pink-200', text: 'text-pink-700', bar: 'bg-pink-400', badge: 'bg-pink-100 text-pink-700' },
+        amber: { bg: 'bg-amber-50', border: 'border-amber-200', text: 'text-amber-700', bar: 'bg-amber-400', badge: 'bg-amber-100 text-amber-700' },
+        purple: { bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-700', bar: 'bg-purple-400', badge: 'bg-purple-100 text-purple-700' },
       };
-      const icons = {blue:'💍', green:'🧑', pink:'👩', amber:'👨', purple:'🤝'};
+      const icons = { blue: '💍', green: '🧑', pink: '👩', amber: '👨', purple: '🤝' };
 
       document.getElementById('total-harta-display').textContent = formatRupiah(hartaInput);
       document.getElementById('badge-total-ahli').textContent = `${hasil.length} Ahli Waris`;
@@ -569,7 +716,7 @@
         return `<div class="${c.bg} ${c.border} border rounded-2xl p-4">
           <div class="flex items-center justify-between mb-2">
             <div class="flex items-center gap-2">
-              <span class="text-base">${icons[h.colorClass]||'👤'}</span>
+              <span class="text-base">${icons[h.colorClass] || '👤'}</span>
               <span class="font-semibold text-gray-800 text-sm">${h.label}</span>
             </div>
             <span class="${c.badge} text-xs font-bold px-2.5 py-1 rounded-full">${h.fraksi}</span>
@@ -582,7 +729,7 @@
             <div class="text-right">
               <span class="text-xs text-gray-400">${pct}%</span>
               <div class="w-20 h-1.5 bg-gray-200 rounded-full mt-1 overflow-hidden">
-                <div class="h-full rounded-full ${c.bar}" style="width:${Math.min(100,pct)}%"></div>
+                <div class="h-full rounded-full ${c.bar}" style="width:${Math.min(100, pct)}%"></div>
               </div>
             </div>
           </div>
@@ -616,18 +763,18 @@
       if (dc) dc.classList.remove('hidden');
 
       showToast('Perhitungan berhasil!', 'success');
-      document.getElementById('hasilWarisPanel').scrollIntoView({behavior:'smooth', block:'nearest'});
+      document.getElementById('hasilWarisPanel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
     function resetKalkulator() {
-      ['hartaWarisan','jumlahAnakLaki','jumlahAnakPerempuan',
-      'jumlahSaudaraLakiKandung','jumlahSaudaraPerempuanKandung',
-      'jumlahSaudaraLakiSeibu','jumlahSaudaraPerempuanSeibu',
-      'jumlahSaudaraLakiSeayah','jumlahSaudaraPerempuanSeayah'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.value = id === 'hartaWarisan' ? '' : 0;
-      });
-      ['pasangan','statusAyah','statusIbu'].forEach(id => {
+      ['hartaWarisan', 'jumlahAnakLaki', 'jumlahAnakPerempuan',
+        'jumlahSaudaraLakiKandung', 'jumlahSaudaraPerempuanKandung',
+        'jumlahSaudaraLakiSeibu', 'jumlahSaudaraPerempuanSeibu',
+        'jumlahSaudaraLakiSeayah', 'jumlahSaudaraPerempuanSeayah'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.value = id === 'hartaWarisan' ? '' : 0;
+        });
+      ['pasangan', 'statusAyah', 'statusIbu'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.value = 'tidak_ada';
       });
@@ -641,4 +788,5 @@
   </script>
 
 </body>
+
 </html>
