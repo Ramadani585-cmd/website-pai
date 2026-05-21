@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="Icon/logo-umm.png" type="image/png">
-  <title>Kalkulator Waris Islam | RAMADANI UMM</title>
+  <title>Kalkulator Waris | RAMADANI UMM</title>
 
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
@@ -377,7 +377,7 @@
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="bg-pai-900 py-8 text-center">
-    <p class="text-white/50 text-xs">© 2026 RAMADANI · Universitas Muhammadiyah Malang · Pendidikan Agama Islam</p>
+    <p class="text-white/50 text-xs">Copyright &copy; 2026 by Ramadani Pratama UMM | All Rights Reserved.</p>
   </footer>
 
   <!-- ==================== JS ==================== -->
@@ -621,9 +621,9 @@
 
     function resetKalkulator() {
       ['hartaWarisan','jumlahAnakLaki','jumlahAnakPerempuan',
-       'jumlahSaudaraLakiKandung','jumlahSaudaraPerempuanKandung',
-       'jumlahSaudaraLakiSeibu','jumlahSaudaraPerempuanSeibu',
-       'jumlahSaudaraLakiSeayah','jumlahSaudaraPerempuanSeayah'].forEach(id => {
+      'jumlahSaudaraLakiKandung','jumlahSaudaraPerempuanKandung',
+      'jumlahSaudaraLakiSeibu','jumlahSaudaraPerempuanSeibu',
+      'jumlahSaudaraLakiSeayah','jumlahSaudaraPerempuanSeayah'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.value = id === 'hartaWarisan' ? '' : 0;
       });

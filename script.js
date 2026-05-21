@@ -1,10 +1,10 @@
 // ==================== Quiz Data ====================
 const quizData = [
-  { q: "Berapa jumlah rukun iman dalam Islam?", opts: ["4","5","6","7"], correct: 2 },
-  { q: "Kitab suci umat Islam adalah...", opts: ["Taurat","Zabur","Injil","Al-Qur'an"], correct: 3 },
-  { q: "Shalat wajib dilakukan berapa kali sehari?", opts: ["3 kali","4 kali","5 kali","7 kali"], correct: 2 },
-  { q: "Rukun Islam yang pertama adalah...", opts: ["Shalat","Syahadat","Puasa","Zakat"], correct: 1 },
-  { q: "Nabi terakhir dalam Islam adalah...", opts: ["Nabi Isa AS","Nabi Musa AS","Nabi Ibrahim AS","Nabi Muhammad SAW"], correct: 3 }
+  { q: "Berapa jumlah rukun iman dalam Islam?", opts: ["4", "5", "6", "7"], correct: 2 },
+  { q: "Kitab suci umat Islam adalah...", opts: ["Taurat", "Zabur", "Injil", "Al-Qur'an"], correct: 3 },
+  { q: "Shalat wajib dilakukan berapa kali sehari?", opts: ["3 kali", "4 kali", "5 kali", "7 kali"], correct: 2 },
+  { q: "Rukun Islam yang pertama adalah...", opts: ["Shalat", "Syahadat", "Puasa", "Zakat"], correct: 1 },
+  { q: "Nabi terakhir dalam Islam adalah...", opts: ["Nabi Isa AS", "Nabi Musa AS", "Nabi Ibrahim AS", "Nabi Muhammad SAW"], correct: 3 }
 ];
 
 let currentQ = 0, score = 0, answered = false;
@@ -48,11 +48,10 @@ function selectAnswer(idx) {
 
   const fb = document.getElementById('quiz-feedback');
   fb.classList.remove('hidden');
-  fb.className = `mb-4 p-4 rounded-xl text-sm font-medium ${
-    idx === correct
+  fb.className = `mb-4 p-4 rounded-xl text-sm font-medium ${idx === correct
       ? 'bg-green-50 text-green-700 border border-green-200'
       : 'bg-red-50 text-red-700 border border-red-200'
-  }`;
+    }`;
   fb.textContent = idx === correct
     ? '✅ Jawaban benar! Alhamdulillah.'
     : `❌ Jawaban salah. Jawaban yang benar: ${quizData[currentQ].opts[correct]}`;
@@ -68,8 +67,7 @@ function nextQuestion() {
     document.getElementById('quiz-result').classList.remove('hidden');
     const pct = Math.round(score / quizData.length * 100);
     document.getElementById('quiz-result-text').textContent =
-      `Anda mendapat skor ${score}/${quizData.length} (${pct}%). ${
-        pct >= 80 ? 'Luar biasa! Masya Allah!' : pct >= 60 ? 'Bagus! Terus belajar!' : 'Tetap semangat belajar!'
+      `Anda mendapat skor ${score}/${quizData.length} (${pct}%). ${pct >= 80 ? 'Luar biasa! Masya Allah!' : pct >= 60 ? 'Bagus! Terus belajar!' : 'Tetap semangat belajar!'
       }`;
   } else {
     renderQuiz();
@@ -140,25 +138,25 @@ function hitungWarisan() {
     return;
   }
 
-  const pasangan           = document.getElementById('pasangan').value;
-  const anakLaki           = parseInt(document.getElementById('jumlahAnakLaki').value) || 0;
-  const anakPerempuan      = parseInt(document.getElementById('jumlahAnakPerempuan').value) || 0;
-  const statusAyah         = document.getElementById('statusAyah').value;
-  const statusIbu          = document.getElementById('statusIbu').value;
+  const pasangan = document.getElementById('pasangan').value;
+  const anakLaki = parseInt(document.getElementById('jumlahAnakLaki').value) || 0;
+  const anakPerempuan = parseInt(document.getElementById('jumlahAnakPerempuan').value) || 0;
+  const statusAyah = document.getElementById('statusAyah').value;
+  const statusIbu = document.getElementById('statusIbu').value;
   const saudaraLakiKandung = parseInt(document.getElementById('jumlahSaudaraLakiKandung').value) || 0;
   const saudaraPercKandung = parseInt(document.getElementById('jumlahSaudaraPerempuanKandung').value) || 0;
-  const saudaraLakiSeibu   = parseInt(document.getElementById('jumlahSaudaraLakiSeibu').value) || 0;
-  const saudaraPercSeibu   = parseInt(document.getElementById('jumlahSaudaraPerempuanSeibu').value) || 0;
-  const saudaraLakiSeayah  = parseInt(document.getElementById('jumlahSaudaraLakiSeayah') ? document.getElementById('jumlahSaudaraLakiSeayah').value : 0) || 0;
-  const saudaraPercSeayah  = parseInt(document.getElementById('jumlahSaudaraPerempuanSeayah') ? document.getElementById('jumlahSaudaraPerempuanSeayah').value : 0) || 0;
+  const saudaraLakiSeibu = parseInt(document.getElementById('jumlahSaudaraLakiSeibu').value) || 0;
+  const saudaraPercSeibu = parseInt(document.getElementById('jumlahSaudaraPerempuanSeibu').value) || 0;
+  const saudaraLakiSeayah = parseInt(document.getElementById('jumlahSaudaraLakiSeayah') ? document.getElementById('jumlahSaudaraLakiSeayah').value : 0) || 0;
+  const saudaraPercSeayah = parseInt(document.getElementById('jumlahSaudaraPerempuanSeayah') ? document.getElementById('jumlahSaudaraPerempuanSeayah').value : 0) || 0;
 
-  const adaAnak  = (anakLaki + anakPerempuan) > 0;
-  const adaAyah  = statusAyah === 'ada';
-  const adaIbu   = statusIbu === 'ada';
+  const adaAnak = (anakLaki + anakPerempuan) > 0;
+  const adaAyah = statusAyah === 'ada';
+  const adaIbu = statusIbu === 'ada';
   const totalSaudaraKandung = saudaraLakiKandung + saudaraPercKandung;
-  const totalSaudaraSeibu   = saudaraLakiSeibu + saudaraPercSeibu;
-  const totalSaudaraSeayah  = saudaraLakiSeayah + saudaraPercSeayah;
-  const totalSaudaraSemua   = totalSaudaraKandung + totalSaudaraSeibu + totalSaudaraSeayah;
+  const totalSaudaraSeibu = saudaraLakiSeibu + saudaraPercSeibu;
+  const totalSaudaraSeayah = saudaraLakiSeayah + saudaraPercSeayah;
+  const totalSaudaraSemua = totalSaudaraKandung + totalSaudaraSeibu + totalSaudaraSeayah;
 
   let sisa = hartaInput;
   const hasil = [];
@@ -171,15 +169,15 @@ function hitungWarisan() {
 
   // ── 1. Pasangan ──
   if (pasangan === 'suami') {
-    const fraksi = adaAnak ? 1/4 : 1/2;
-    const label  = adaAnak ? '¼' : '½';
-    const bayar  = hartaInput * fraksi;
+    const fraksi = adaAnak ? 1 / 4 : 1 / 2;
+    const label = adaAnak ? '¼' : '½';
+    const bayar = hartaInput * fraksi;
     addHasil('Suami / Duda', label, bayar, ["An-Nisa' 12", 'KHI Pasal 179'], 'blue');
     sisa -= bayar;
   } else if (pasangan === 'istri') {
-    const fraksi = adaAnak ? 1/8 : 1/4;
-    const label  = adaAnak ? '⅛' : '¼';
-    const bayar  = hartaInput * fraksi;
+    const fraksi = adaAnak ? 1 / 8 : 1 / 4;
+    const label = adaAnak ? '⅛' : '¼';
+    const bayar = hartaInput * fraksi;
     addHasil('Istri / Janda', label, bayar, ["An-Nisa' 12", 'KHI Pasal 180'], 'blue');
     sisa -= bayar;
   }
@@ -188,7 +186,7 @@ function hitungWarisan() {
   let ayahIsAshabah = false;
   if (adaAyah) {
     if (adaAnak) {
-      const bayar = hartaInput * (1/6);
+      const bayar = hartaInput * (1 / 6);
       addHasil('Ayah Kandung', '⅙', bayar, ["An-Nisa' 11", 'KHI Pasal 177'], 'green');
       sisa -= bayar;
     } else {
@@ -200,17 +198,17 @@ function hitungWarisan() {
   if (adaIbu) {
     const adaDuaAtauLebihSaudara = totalSaudaraSemua >= 2;
     if (adaAnak || adaDuaAtauLebihSaudara) {
-      const bayar = hartaInput * (1/6);
+      const bayar = hartaInput * (1 / 6);
       addHasil('Ibu Kandung', '⅙', bayar, ["An-Nisa' 11", 'KHI Pasal 178'], 'green');
       sisa -= bayar;
     } else {
       if (adaAyah) {
         // Bersama ayah: ibu dapat 1/3 dari sisa setelah pasangan
-        const bayar = sisa * (1/3);
+        const bayar = sisa * (1 / 3);
         addHasil('Ibu Kandung', '⅓ dari sisa', bayar, ["An-Nisa' 11", 'KHI Pasal 178'], 'green');
         sisa -= bayar;
       } else {
-        const bayar = hartaInput * (1/3);
+        const bayar = hartaInput * (1 / 3);
         addHasil('Ibu Kandung', '⅓', bayar, ["An-Nisa' 11", 'KHI Pasal 178'], 'green');
         sisa -= bayar;
       }
@@ -240,7 +238,7 @@ function hitungWarisan() {
       sisa = 0;
     } else {
       // Hanya anak perempuan
-      let fraksiTotal = anakPerempuan === 1 ? 1/2 : 2/3;
+      let fraksiTotal = anakPerempuan === 1 ? 1 / 2 : 2 / 3;
       let label = anakPerempuan === 1 ? '½' : '⅔';
       const bayar = hartaInput * fraksiTotal;
       addHasil(
@@ -261,9 +259,9 @@ function hitungWarisan() {
   if (!adaAnak && !adaAyah && sisa > 0) {
     // Saudara seibu
     if (totalSaudaraSeibu > 0) {
-      const fraksi = totalSaudaraSeibu === 1 ? 1/6 : 1/3;
-      const label  = totalSaudaraSeibu === 1 ? '⅙' : '⅓';
-      const bayar  = hartaInput * fraksi;
+      const fraksi = totalSaudaraSeibu === 1 ? 1 / 6 : 1 / 3;
+      const label = totalSaudaraSeibu === 1 ? '⅙' : '⅓';
+      const bayar = hartaInput * fraksi;
       const nama = [];
       if (saudaraLakiSeibu > 0) nama.push(`${saudaraLakiSeibu} laki-laki`);
       if (saudaraPercSeibu > 0) nama.push(`${saudaraPercSeibu} perempuan`);
@@ -290,9 +288,9 @@ function hitungWarisan() {
         }
         sisa = 0;
       } else {
-        const fraksi = saudaraPercKandung === 1 ? 1/2 : 2/3;
-        const label  = saudaraPercKandung === 1 ? '½' : '⅔';
-        const bayar  = sisa * fraksi;
+        const fraksi = saudaraPercKandung === 1 ? 1 / 2 : 2 / 3;
+        const label = saudaraPercKandung === 1 ? '½' : '⅔';
+        const bayar = sisa * fraksi;
         addHasil(
           `Saudara Perempuan Kandung (${saudaraPercKandung} orang)`,
           label, bayar, ["An-Nisa' 12", 'KHI Pasal 182'], 'pink'
@@ -318,9 +316,9 @@ function hitungWarisan() {
         }
         sisa = 0;
       } else {
-        const fraksi = saudaraPercSeayah === 1 ? 1/2 : 2/3;
-        const label  = saudaraPercSeayah === 1 ? '½' : '⅔';
-        const bayar  = sisa * fraksi;
+        const fraksi = saudaraPercSeayah === 1 ? 1 / 2 : 2 / 3;
+        const label = saudaraPercSeayah === 1 ? '½' : '⅔';
+        const bayar = sisa * fraksi;
         addHasil(
           `Saudara Perempuan Seayah (${saudaraPercSeayah} orang)`,
           label, bayar, ["An-Nisa' 12", 'KHI Pasal 182'], 'pink'
@@ -332,10 +330,10 @@ function hitungWarisan() {
 
   // ── Render ──
   const colorMap = {
-    blue:   { bg: 'bg-blue-50',   border: 'border-blue-200',   text: 'text-blue-700',   bar: 'bg-blue-400',   badge: 'bg-blue-100 text-blue-700' },
-    green:  { bg: 'bg-green-50',  border: 'border-green-200',  text: 'text-green-700',  bar: 'bg-green-400',  badge: 'bg-green-100 text-green-700' },
-    pink:   { bg: 'bg-pink-50',   border: 'border-pink-200',   text: 'text-pink-700',   bar: 'bg-pink-400',   badge: 'bg-pink-100 text-pink-700' },
-    amber:  { bg: 'bg-amber-50',  border: 'border-amber-200',  text: 'text-amber-700',  bar: 'bg-amber-400',  badge: 'bg-amber-100 text-amber-700' },
+    blue: { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-700', bar: 'bg-blue-400', badge: 'bg-blue-100 text-blue-700' },
+    green: { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-700', bar: 'bg-green-400', badge: 'bg-green-100 text-green-700' },
+    pink: { bg: 'bg-pink-50', border: 'border-pink-200', text: 'text-pink-700', bar: 'bg-pink-400', badge: 'bg-pink-100 text-pink-700' },
+    amber: { bg: 'bg-amber-50', border: 'border-amber-200', text: 'text-amber-700', bar: 'bg-amber-400', badge: 'bg-amber-100 text-amber-700' },
     purple: { bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-700', bar: 'bg-purple-400', badge: 'bg-purple-100 text-purple-700' },
   };
   const icons = { blue: '💍', green: '🧑', pink: '👩', amber: '👨', purple: '🤝' };
@@ -410,16 +408,16 @@ function hitungWarisan() {
 
 function resetKalkulator() {
   const ids = [
-    'hartaWarisan','jumlahAnakLaki','jumlahAnakPerempuan',
-    'jumlahSaudaraLakiKandung','jumlahSaudaraPerempuanKandung',
-    'jumlahSaudaraLakiSeibu','jumlahSaudaraPerempuanSeibu',
-    'jumlahSaudaraLakiSeayah','jumlahSaudaraPerempuanSeayah'
+    'hartaWarisan', 'jumlahAnakLaki', 'jumlahAnakPerempuan',
+    'jumlahSaudaraLakiKandung', 'jumlahSaudaraPerempuanKandung',
+    'jumlahSaudaraLakiSeibu', 'jumlahSaudaraPerempuanSeibu',
+    'jumlahSaudaraLakiSeayah', 'jumlahSaudaraPerempuanSeayah'
   ];
   ids.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = id === 'hartaWarisan' ? '' : 0;
   });
-  const selects = ['pasangan','statusAyah','statusIbu'];
+  const selects = ['pasangan', 'statusAyah', 'statusIbu'];
   selects.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = 'tidak_ada';
